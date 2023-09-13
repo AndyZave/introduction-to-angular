@@ -1,1 +1,16 @@
-Fairhouse App is running
+<main>
+    <header><img src="../assets/logo.svg" alt="fairhouse">Justa Casa</header>
+   <section>
+    <app-housing-list [locationList]="housingLocationList" (locationSelectedEvent)="updateSelectedLocation($event)"></app-housing-list>
+    <article>
+        <ng-container *ngIf="selectedLocation">
+        <img [src]="selectedLocation?.photo">
+        <p>{{selectedLocation?.name}}</p>
+        <p>{{selectedLocation?.city}}, {{selectedLocation?.state}}</p>
+        <p> Disponível?: {{selectedLocation?.availableUnits}}</p>
+        <p>{{selectedLocation?.laundry ? "Possui lavanderia" : "Não possui lavanderia"}}</p>
+        <p>{{selectedLocation?.wifi ? "WiFi incluso" : "Não possui WiFi"}}</p>
+        </ng-container>
+      </article>
+</section>
+  </main>
